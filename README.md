@@ -1,7 +1,12 @@
 # Glare-Spot-Detection-and-Face-Parsing-Implementation
 
-This implementation includes a mask creation program and an inpainting program that inpaints the target mask!
-- Reproducer: Dennis
+This implementation includes a mask creation program and an inpainting program that inpaints the target mask! The idea is that the glare spots identified on human nose always give the facial 3D Reconstruction a hard time. Removing the bright spots on the nose can possibly make the reconstruction process better. So, the overview of the process is:
+
+1. Create a glare spot mask given an inputted image
+2. Use the outputted mask to run throguh the inpainting program
+3. The bright spots should then be inpainted and "removed".
+
+- Reproducer: Dennis Chao
 
 ### Installation
 Requires `python>=3.8`
