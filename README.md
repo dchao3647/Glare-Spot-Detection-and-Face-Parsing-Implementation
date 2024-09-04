@@ -26,12 +26,7 @@ To create a target mask, it requires an input image and bright_spot_detect.py to
 ### Remove Glare Spot Usage
 Download the model checkpoints provided in [Segment Anything](./segment_anything/README.md) and [LaMa](./lama/README.md) (e.g., [sam_vit_h_4b8939.pth](https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth) and [big-lama](https://disk.yandex.ru/d/ouP6l8VJ0HpMZg)), and put them into `./pretrained_models`. For simplicity, you can also go [here](https://drive.google.com/drive/folders/1ST0aRbDRZGli0r7OVVOQvXwtadMCuWXg?usp=sharing), directly download [pretrained_models](https://drive.google.com/drive/folders/1wpY-upCo4GIW4wVPnlMh_ym779lLIG2A?usp=sharing), put the directory into `./` and get `./pretrained_models`.
 
-For MobileSAM, the sam_model_type should use "vit_t", and the sam_ckpt should use "./weights/mobile_sam.pt".
-For the MobileSAM project, please refer to [MobileSAM](https://github.com/ChaoningZhang/MobileSAM)
-```
-bash script/remove_anything.sh
 
-```
 Specify an image and a mask, and Remove Bright Spot will remove the glare point at the mask specified. The input image and the mask must be inside the example folder as shown in the command. The outputted image will then be saved in the results folder. So, once you have created a bright spot mask using bright_spot_detect.py, you can then move the mask to the example folder along with the original input image. The remove_anything program will then function as the command.
 ```bash
 python remove_anything.py --input_img .\example\input1.jpg --mask_img .\example\mask1.jpg --out_dir .\results --lama_config .\lama\configs\prediction\default.yaml --lama_ckpt .\pretrained_models\big-lama
