@@ -21,7 +21,7 @@ Then pip install [./lama_requirements_windows.txt](lama_requirements_windows.txt
 [./lama/requirements.txt](lama%2Frequirements.txt).
 
 ### Mask Creation Usage
-To create a target mask, it requires an input image and bright_spot_detect.py to output a target mask. The input image must be in the same directory as the bright_spot_detect.py. Just remember to change the input path inside the program to the name of the image you want to use.
+To create a target mask, it requires an input image and bright_spot_detect.py to output a target mask. The input image must be in the same directory as the bright_spot_detect.py. Just remember to change the input path inside the program to the name of the image you want to use and the name of the output file as you wish.
 
 ### Remove Glare Spot Usage
 Download the model checkpoints provided in [Segment Anything](./segment_anything/README.md) and [LaMa](./lama/README.md) (e.g., [sam_vit_h_4b8939.pth](https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth) and [big-lama](https://disk.yandex.ru/d/ouP6l8VJ0HpMZg)), and put them into `./pretrained_models`. For simplicity, you can also go [here](https://drive.google.com/drive/folders/1ST0aRbDRZGli0r7OVVOQvXwtadMCuWXg?usp=sharing), directly download [pretrained_models](https://drive.google.com/drive/folders/1wpY-upCo4GIW4wVPnlMh_ym779lLIG2A?usp=sharing), put the directory into `./` and get `./pretrained_models`.
