@@ -15,6 +15,9 @@ open `Anaconda Powershell Prompt (miniconda3)` as administrator.
 Then pip install [./lama_requirements_windows.txt](lama_requirements_windows.txt) instead of 
 [./lama/requirements.txt](lama%2Frequirements.txt).
 
+### Mask Creation Usage
+To create a target mask, it requires an input image and bright_spot_detect.py to output a target mask. The input image must be in the same directory as the bright_spot_detect.py. Just remember to change the input path inside the program to the name of the image you want to use.
+
 ### Usage
 Download the model checkpoints provided in [Segment Anything](./segment_anything/README.md) and [LaMa](./lama/README.md) (e.g., [sam_vit_h_4b8939.pth](https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth) and [big-lama](https://disk.yandex.ru/d/ouP6l8VJ0HpMZg)), and put them into `./pretrained_models`. For simplicity, you can also go [here](https://drive.google.com/drive/folders/1ST0aRbDRZGli0r7OVVOQvXwtadMCuWXg?usp=sharing), directly download [pretrained_models](https://drive.google.com/drive/folders/1wpY-upCo4GIW4wVPnlMh_ym779lLIG2A?usp=sharing), put the directory into `./` and get `./pretrained_models`.
 
@@ -24,8 +27,7 @@ For the MobileSAM project, please refer to [MobileSAM](https://github.com/Chaoni
 bash script/remove_anything.sh
 
 ```
-Specify an image and a point, and Remove Anything will remove the object at the point.
+Specify an image and a mask, and Remove Bright Spot will remove the glare point at the mask specified. The input image and the mask must be inside the example folder as shown in the command. The outputted image will then be saved in the results folder.
 ```bash
 python remove_anything.py --input_img .\example\input1.jpg --mask_img .\example\mask1.jpg --out_dir .\results --lama_config .\lama\configs\prediction\default.yaml --lama_ckpt .\pretrained_models\big-lama
 ```
-You can change `--coords_type key_in` to `--coords_type click` if your machine has a display device. If `click` is set, after running the above command, the image will be displayed. (1) Use *left-click* to record the coordinates of the click. It supports modifying points, and only last point coordinates are recorded. (2) Use *right-click* to finish the selection.
